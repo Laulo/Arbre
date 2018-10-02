@@ -58,7 +58,7 @@ public class TestArbreADeuxSommets {
 
 	@Test
     public void testPrefixe() {
-        Assert.assertEquals("a(b)", a.prefixe());
+        Assert.assertEquals("a (b)", a.prefixe());
     }
 
 }
