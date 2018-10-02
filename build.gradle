@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+mainClassName = 'Start'
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'Start'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+        // + pas besoin d'accès internet.
+        // - ne fonctionne que sous Linux (et après un "apt install junit4")
+	// testCompile fileTree(dir: '/usr/share/java', include: 'junit4.jar')
+
+
+        // + pas besoin d'installer quoi que ce soit en local
+        // - nécessite un accès internet
+        // télécharge le jar dans ~/.gradle
+    testCompile 'junit:junit:4.+'
+}
+
+clean {
+    delete 'prefixe.txt', 'postfixe.txt'
+}
+
