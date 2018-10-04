@@ -42,6 +42,6 @@ public class Start {
 			e.printStackTrace();
 		}
 
-		System.out.println("Fichiers prefixe.txt et postfixe.txt crées");
+		System.out.println("Fichiers prefixe.txt crée");
    }
 }
