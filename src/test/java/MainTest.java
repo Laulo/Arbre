@@ -4,7 +4,7 @@ import org.junit.runner.notification.Failure;
 
 public class MainTest {
 	public static void main(String[] args) {
-    	Result result = JUnitCore.runClasses(TestArbreAUnSommet.class, TestArbreAjouterEnfant.class, TestArbreADeuxSommets.class, TestArbrePereFilsPetitFils.class);
+    	Result result = JUnitCore.runClasses(TestArbreAUnSommet.class, TestArbreAjouterEnfant.class, TestArbreADeuxSommets.class, TestArbreUnSommetDeuxEnfants.class, TestArbrePereFilsPetitFils.class);
     	for (Failure failure : result.getFailures()) {
       		System.out.println(failure.toString());
     	}

@@ -1,7 +1,9 @@
+
 import org.junit.*;
 
 import arbre.FabriqueArbre;
 import arbre.Arbre;
+
 
 public class TestArbreAjouterEnfant {
  
@@ -28,26 +30,26 @@ public class TestArbreAjouterEnfant {
     }
  
 	// ma longue liste de tests suit
-    @Test
-    public void testAjouterNoeudEnTrop1() {
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testAjouterNoeudEnTrop1() throws IndexOutOfBoundsException {
 		Arbre a = FabriqueArbre.creerNoeud("a");
 		Arbre b = FabriqueArbre.creerNoeud("b");
-        Assert.assertFalse(a.ajouterEnfant(b));
+		a.ajouterEnfant(b);
     }
  
 	@Test
     public void testAjouterNoeudOK() {
         Arbre a = FabriqueArbre.creerNoeud("a", 1);
 		Arbre b = FabriqueArbre.creerNoeud("b");
-		Assert.assertTrue(a.ajouterEnfant(b));
+		a.ajouterEnfant(b);
     }
 
-	@Test
+	@Test(expected = IndexOutOfBoundsException.class)
     public void testAjouterNoeudEnTrop2() {
         Arbre a = FabriqueArbre.creerNoeud("a", 1);
 		Arbre b = FabriqueArbre.creerNoeud("b");
 		a.ajouterEnfant(b);
 		Arbre c = FabriqueArbre.creerNoeud("c");
-        Assert.assertFalse(a.ajouterEnfant(c));
+        a.ajouterEnfant(c);
     }
 }

@@ -63,4 +63,9 @@ public class TestArbreUnSommetDeuxEnfants {
     public void testPrefixe() {
         Assert.assertEquals("a(b, c)", a.prefixe());
     }
+
+	@Test
+    public void testPostfixe() {
+        Assert.assertEquals("(b, c)a", a.postfixe());
+    }
 }

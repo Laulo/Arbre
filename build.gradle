@@ -26,6 +26,5 @@ dependencies {
 }
 
 clean {
-    // delete 'prefixe.txt'
+    delete 'prefixe.txt', 'postfixe.txt'
 }
-

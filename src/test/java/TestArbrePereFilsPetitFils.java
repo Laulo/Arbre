@@ -63,4 +63,9 @@ public class TestArbrePereFilsPetitFils {
     public void testPrefixe() {
         Assert.assertEquals("a(b(c))", a.prefixe());
     }
+
+	@Test
+    public void testPostfixe() {
+        Assert.assertEquals("((c)b)a", a.postfixe());
+    }
 }

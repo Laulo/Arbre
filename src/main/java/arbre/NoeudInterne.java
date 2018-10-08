@@ -33,11 +33,10 @@ public class NoeudInterne implements Arbre {
 	}
 	
 	@Override
-	public boolean ajouterEnfant(Arbre n) {
+	public void ajouterEnfant(Arbre n) {
 		if (nbEnfants >= enfants.length)
-			return false;
+			throw new IndexOutOfBoundsException();
 		enfants[nbEnfants++] = n;
-		return true;
 	}
 
 	@Override
@@ -47,6 +46,15 @@ public class NoeudInterne implements Arbre {
 			s += ", " + enfants[i].prefixe();
 		}
 		return s + ')';
+	}
+	
+	@Override
+	public String postfixe() {
+		String s = '(' + enfants[0].postfixe();
+		for(int i = 1; i < nbEnfants; i++) {
+			s += ", " + enfants[i].postfixe();
+		}
+		return s + ')' + info;
 	}
 
 	@Override
@@ -80,9 +88,9 @@ public class NoeudInterne implements Arbre {
 	public int hauteur() {
 		int n = 0;
 		for(int i = 0; i < nbEnfants; i++) {
-			n = 1 + Math.max(n, enfants[i].hauteur());
+			n = Math.max(n, enfants[i].hauteur());
 		}
-		return n;
+		return 1 + n;
 	}
 
 	@Override

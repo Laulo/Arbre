@@ -20,6 +20,9 @@ public class Feuille implements Arbre {
 	public String prefixe() { return info; }
 	
 	@Override
+	public String postfixe() { return info; }
+	
+	@Override
 	public int nbFeuilles() { return 1; }
 	
 	@Override
@@ -35,6 +38,6 @@ public class Feuille implements Arbre {
 	public int maxDegree() { return 0; }
 
 	@Override
-	public boolean ajouterEnfant(Arbre n) { return false; }
+	public void ajouterEnfant(Arbre n) { throw new IndexOutOfBoundsException(); }
 }
 

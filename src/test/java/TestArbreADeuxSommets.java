@@ -1,4 +1,5 @@
 import org.junit.*;
+
 import arbre.FabriqueArbre;
 import arbre.Arbre;
 
@@ -58,7 +59,11 @@ public class TestArbreADeuxSommets {
 
 	@Test
     public void testPrefixe() {
-        Assert.assertEquals("a (b)", a.prefixe());
+        Assert.assertEquals("a(b)", a.prefixe());
     }
 
+	@Test
+    public void testPostfixe() {
+        Assert.assertEquals("(b)a", a.postfixe());
+    }
 }

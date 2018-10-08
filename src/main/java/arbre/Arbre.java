@@ -15,6 +15,13 @@ public interface Arbre {
 	public String prefixe();
 
 	/**
+	 * Returns a String representation of this subtree in postfix order.
+	 * 
+	 * @return the String representation.
+	 */
+	public String postfixe();
+
+	/**
 	 * Returns the number of leaves of this subtree.
 	 * 
 	 * @return the number of leaves.
@@ -54,5 +61,5 @@ public interface Arbre {
 	* @param  a	the Arbre to add as a child of this NoeudInterne.
  	* @return  true if the operation succeeded, false otherwise.
     */
-	public boolean ajouterEnfant(Arbre a);
+	public void ajouterEnfant(Arbre a) throws IndexOutOfBoundsException;
 }

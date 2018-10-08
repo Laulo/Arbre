@@ -59,4 +59,9 @@ public class TestArbreAUnSommet {
     public void testPrefixe() {
         Assert.assertEquals("a", a.prefixe());
     }
+
+	@Test
+    public void testPostfixe() {
+        Assert.assertEquals("a", a.postfixe());
+    }
 }

@@ -34,14 +34,14 @@ public class Start {
 			PrintStream out = new PrintStream(new FileOutputStream("prefixe.txt"));
 			out.println(a.prefixe());
 			out.close();
-		/*	out = new PrintStream(new FileOutputStream("postfixe.txt"));
+			out = new PrintStream(new FileOutputStream("postfixe.txt"));
 			out.println(a.postfixe());
-			out.close(); */
+			out.close();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		System.out.println("Fichiers prefixe.txt crée");
+		System.out.println("Fichiers prefixe.txt et postfixe.txt crées");
    }
 }
